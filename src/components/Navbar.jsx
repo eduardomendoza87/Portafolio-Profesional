@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-base sticky top-0 z-50">
+    <nav className="w-full bg-transparent sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 py-4 md:px-6 md:py-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
           {/* LOGO  */}
@@ -28,7 +28,7 @@ export default function Navbar() {
           </Link>
 
           {/* TABS NAVIGATION */}
-          <div className="flex w-full md:w-auto justify-center gap-1 bg-surface/50 p-1 rounded-2xl border border-border-default shadow-sm">
+          <div className="flex w-full md:w-auto justify-center gap-1 bg-surface/50 p-1 rounded-2xl border border-border-default shadow-sm ">
             {tabs.map((tab) => (
               <Link
                 key={tab.id}
