@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- COLORES DE FONDO --- */
+  --color-base: #020617;                /* Fondo principal más oscuro (base de la app) */
+  --color-surface: #0F172A;             /* Superficie secundaria (cards, panels) */
+  --color-surface-hover: #1E293B;       /* Superficie al pasar el mouse (hover effect) */
+
+  /* --- COLORES DE BORDES --- */
+  --color-border-default: #1E293B;      /* Borde por defecto (sutiles, inactivos) */
+  --color-border-active: #334155;       /* Borde activo (cuando está seleccionado) */
+
+  /* --- COLORES DE TEXTO --- */
+  --color-text-primary: #F1F5F9;        /* Texto principal (título, párrafos importantes) */
+  --color-text-secondary: #94A3B8;      /* Texto secundario (descripciones, metadata) */
+  --color-text-muted: #475569;          /* Texto apagado/deshabilitado (placeholders, hints) */
+
+  /* --- COLORES DE ACENTO --- */
+  --color-accent: #6366F1;              /* Color principal de la marca (botones, links) */
+  --color-accent-hover: #4F46E5;        /* Acento al pasar el mouse (versión más oscura) */
+  --color-accent-glow: #6366f133;       /* Acento con transparencia (brillo, sombras) */
+
+  /* --- COLORES DE ESTADO --- */
+  --color-success: #10B981;             /* Verde para mensajes de éxito */
+
+  /* --- TIPOGRAFÍA --- */
+  --font-display: "Space Grotesk", sans-serif;   /* Para títulos y headings (más bold) */
+  --font-body: "Inter", sans-serif;              /* Para textos normales (lectura) */
+  --font-mono: "JetBrains Mono", monospace;      /* Para código y contenido monoespaciado */
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  
+  body {
+    @apply bg-base text-text-primary font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
