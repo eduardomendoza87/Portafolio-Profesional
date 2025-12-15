@@ -19,7 +19,7 @@ const Home = () => {
             <h2 className="text-text-primary font-display font-semibold text-2xl mb-4 ">
               Soy Eduardo Mendoza
             </h2>
-            <h1 className="text-4xl  font-display font-bold mb-6 text-accent">
+            <h1 className="text-4xl font-display font-bold mb-6 text-accent">
               Frontend Engineer & Product Designer
             </h1>
             {/*Parrafo hero*/}
