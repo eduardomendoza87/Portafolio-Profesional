@@ -5,6 +5,7 @@ import MainLayout from '../components/layouts/MainLayout';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import StackTech from '../pages/StackTech';
+import Projects from '../pages/Projects';
 const AppRoutes = () => {
   return (
     <Routes>
@@ -17,6 +18,8 @@ const AppRoutes = () => {
         <Route path="sobre-mi" element={<About />} />
         {/*Ruta: Stack */}
         <Route path="stack" element={<StackTech />} />
+        {/*Ruta:Proyectos*/}
+        <Route path="proyectos" element={<Projects/>}/>
 
         {/* Ruta 404: Redirigir a inicio si no existe */}
         <Route path="*" element={<Navigate to="/" replace />} />
