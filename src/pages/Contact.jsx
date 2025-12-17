@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from '@emailjs/browser'; // <--- 1. IMPORTAR ESTO
+import emailjs from '@emailjs/browser'; 
 import { Linkedin, Github, Instagram, AlertCircle, Copy, Check } from "lucide-react";
 
 const Contact = () => {
@@ -28,12 +28,12 @@ const Contact = () => {
     setIsSubmitting(true);
     setSuccessMsg('');
 
-    // --- 2. CONFIGURACIÓN DE EMAILJS ---
+    //CONFIGURACIÓN DE EMAILJS 
    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY; 
 
-    // Objeto que coincide con las variables {{variables}} de tu template en EmailJS
+    // Objeto que coincide con las variables {{variables}} de template en EmailJS
     const templateParams = {
         fullname: formData.fullname,
         email: formData.email,
@@ -129,7 +129,7 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
           <section className="bg-surface/50 backdrop-blur-sm rounded-2xl border border-border-active p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               
-              {/* INPUTS DEL FORMULARIO (Mantener tu código igual, solo verificar los 'name') */}
+              {/* INPUTS DEL FORMULARIO  */}
               
               <div>
                 <label htmlFor="fullname" className="block text-text-secondary text-sm font-medium mb-2">Nombre completo</label>
