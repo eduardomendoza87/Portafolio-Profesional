@@ -1,7 +1,6 @@
 # 🚀 Portafolio Profesional - Eduardo Mendoza
 
-![Project Banner](public/assets/banner-placeholder.png) 
-*(Nota: Sube una captura de tu proyecto a 'public/assets/' y actualiza esta ruta)*
+![Project Banner](src/assets/proyecto-portafolio/portafolio-hero.png) 
 
 > Una identidad digital inmersiva construida con **React 19** y **Tailwind CSS v4**. Diseñado bajo la metodología "Deep Cosmos" con enfoque en performance, accesibilidad y experiencia de usuario (UX/UI).
 
@@ -92,10 +91,10 @@ Para garantizar una carga instantánea, los demos de proyectos no se alojan en e
 📬 Contacto
 Eduardo Mendoza Izquierdo - Full Stack Developer & UX/UI Designer
 
-📧 edumendoza.dev@gmail.com
+📧 edu.mendoza.dev@gmail.com
 
 💼 LinkedIn
 
 🐙 GitHub
 
-<p align="center"> Hecho con 💙 y mucho código. </p>
+ Hecho con 💙 y mucho código. 
