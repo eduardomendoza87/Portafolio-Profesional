@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import StackTech from '../pages/StackTech';
 import Projects from '../pages/Projects';
+import ProjectDetails from '../pages/CasoStudy';
 const AppRoutes = () => {
   return (
     <Routes>
@@ -20,7 +21,9 @@ const AppRoutes = () => {
         <Route path="stack" element={<StackTech />} />
         {/*Ruta:Proyectos*/}
         <Route path="proyectos" element={<Projects/>}/>
-
+        {/*Ruta: Detalle de proyecto*/}
+        <Route path="proyectos/:id" element={<ProjectDetails />} />
+  
         {/* Ruta 404: Redirigir a inicio si no existe */}
         <Route path="*" element={<Navigate to="/" replace />} />
         
