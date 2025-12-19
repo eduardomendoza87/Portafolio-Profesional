@@ -1,5 +1,5 @@
 import React from "react";
-import { Reveal } from "../components/ui/Reveal"; // <--- Importamos el componente de animación
+import { Reveal } from "../components/ui/Reveal";
 import MancuernaImage from "../assets/mancuerna.png"
 import MandoImage from "../assets/mando.png"
 import PerfilAnimado from "../assets/perfil-animado.jpg"
@@ -43,37 +43,23 @@ const About = () => {
                 </p>
               </Reveal>
 
-              {/* Stats/Estadísticas - Dentro de la Columna 1 */}
+              {/* Stats/Estadísticas */}
               <Reveal delay={0.8}>
                 <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-text-secondary/20">
-                  {/* Stat 1 - Años */}
+                  {/* Stat 1 */}
                   <div className="text-center lg:text-left">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                      21
-                    </h3>
-                    <p className="text-text-secondary text-sm lg:text-text-secondary">
-                      Años
-                    </p>
+                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">21</h3>
+                    <p className="text-text-secondary text-sm lg:text-text-secondary">Años</p>
                   </div>
-
-                  {/* Stat 2 - Experiencia */}
+                  {/* Stat 2 */}
                   <div className="text-center lg:text-left">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                      1+
-                    </h3>
-                    <p className="text-text-secondary text-sm lg:text-text-secondary">
-                      De experiencia
-                    </p>
+                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">1+</h3>
+                    <p className="text-text-secondary text-sm lg:text-text-secondary">Experiencia</p>
                   </div>
-
-                  {/* Stat 3 - Proyectos */}
+                  {/* Stat 3 */}
                   <div className="text-center lg:text-left">
-                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                      4+
-                    </h3>
-                    <p className="text-text-secondary text-sm lg:text-text-secondary">
-                      Proyectos
-                    </p>
+                    <h3 className="text-4xl lg:text-5xl font-bold text-white mb-2">4+</h3>
+                    <p className="text-text-secondary text-sm lg:text-text-secondary">Proyectos</p>
                   </div>
                 </div>
               </Reveal>
@@ -85,15 +71,7 @@ const About = () => {
                 <img
                   src={PerfilAnimado}
                   alt="Perfil Animado"
-                  className="relative
-                  w-full 
-                  h-auto
-                  aspect-3/4
-                  object-cover 
-                  object-[center_15%]
-                  rounded-3xl
-                  shadow-2xl
-                  border border-accent/30"
+                  className="relative w-full h-auto aspect-3/4 object-cover object-[center_15%] rounded-3xl shadow-2xl border border-accent/30"
                 />
               </Reveal>
             </div>
@@ -103,7 +81,6 @@ const About = () => {
         {/* Sección de intereses personales */}
         <section className="px-6 py-16 md:px-12 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            {/* Título de sección  */}
             <div className="mb-12 text-center">
               <Reveal>
                 <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
@@ -117,15 +94,29 @@ const About = () => {
 
             {/* Grid de cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
               {/* Card 1 - Mentalidad & Fuerza */}
               <Reveal delay={0.2}>
-                <div className="group bg-surface/45 backdrop-blur-sm rounded-2xl p-8 border border-border-active hover:border-accent hover:bg-surface/60 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 h-full">
-                  {/* Imagen centrada */}
+                <div className="
+                  group h-full
+                  bg-surface/45 backdrop-blur-sm rounded-2xl p-8 
+                  border border-border-active 
+                  transition-all duration-300
+                  
+                  /*  MÓVIL*/
+                  shadow-lg shadow-accent/5
+
+                  /*  ESCRITORIO  */
+                  md:hover:border-accent 
+                  md:hover:bg-surface/60 
+                  md:hover:shadow-2xl 
+                  md:hover:shadow-accent/20
+                  md:hover:-translate-y-1
+                ">
                   <div className="flex items-center justify-center mb-6">
                     <div className="relative">
                       {/* Glow effect */}
                       <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
                       <img
                         src={MancuernaImage}
                         alt="Mentalidad y Fuerza"
@@ -133,13 +124,9 @@ const About = () => {
                       />
                     </div>
                   </div>
-
-                  {/* Título */}
                   <h3 className="text-2xl font-display font-bold mb-4 text-text-primary text-center group-hover:text-accent transition-colors">
                     Mentalidad & Fuerza
                   </h3>
-
-                  {/* Párrafo */}
                   <p className="text-text-secondary font-body text-center leading-relaxed">
                     El entrenamiento de fuerza es mi base. Me ha enseñado que la
                     constancia supera al talento y que los grandes resultados
@@ -150,13 +137,25 @@ const About = () => {
 
               {/* Card 2 - Gaming & UI */}
               <Reveal delay={0.4}>
-                <div className="group bg-surface/45 backdrop-blur-sm rounded-2xl p-8 border border-border-active hover:border-accent hover:bg-surface/60 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 h-full">
-                  {/* Imagen centrada */}
+                <div className="
+                  group h-full
+                  bg-surface/45 backdrop-blur-sm rounded-2xl p-8 
+                  border border-border-active 
+                  transition-all duration-300
+                  
+                  /* MÓVIL: Sombra suave por defecto */
+                  shadow-lg shadow-accent/5
+
+                  /*  ESCRITORIO: */
+                  md:hover:border-accent 
+                  md:hover:bg-surface/60 
+                  md:hover:shadow-2xl 
+                  md:hover:shadow-accent/20
+                  md:hover:-translate-y-1
+                ">
                   <div className="flex items-center justify-center mb-6">
                     <div className="relative">
-                      {/* Glow effect */}
                       <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
                       <img
                         src={MandoImage}
                         alt="Gaming y UI Design"
@@ -164,13 +163,9 @@ const About = () => {
                       />
                     </div>
                   </div>
-
-                  {/* Título */}
                   <h3 className="text-2xl font-display font-bold mb-4 text-text-primary text-center group-hover:text-accent transition-colors">
                     Gaming & UI
                   </h3>
-
-                  {/* Párrafo */}
                   <p className="text-text-secondary font-body text-center leading-relaxed">
                     Mi pasión visual viene de los videojuegos. Analizar sus
                     interfaces (HUDs), menús e inspiraciones me llevó a ese nivel
@@ -187,8 +182,16 @@ const About = () => {
           <div className="max-w-7xl mx-auto">
             <Reveal delay={0.2}>
                 <div className="grid grid-cols-1 gap-8">
-                {/* Título de sección  */}
-                <div className="group bg-surface/45 backdrop-blur-sm rounded-2xl p-8 border border-border-active hover:border-accent hover:bg-surface/60 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
+                <div className="
+                  group bg-surface/45 backdrop-blur-sm rounded-2xl p-8 
+                  border border-border-active 
+                  transition-all duration-300 
+                  shadow-lg shadow-accent/5
+                  md:hover:border-accent 
+                  md:hover:bg-surface/60 
+                  md:hover:shadow-xl 
+                  md:hover:shadow-accent/10
+                ">
                     <h3 className="text-2xl font-display font-bold mb-4 text-text-muted text-center group-hover:text-accent transition-colors">
                     Ingeniería en Sistemas Computacionales (Esp. Desarrollo
                     Multiplataforma)

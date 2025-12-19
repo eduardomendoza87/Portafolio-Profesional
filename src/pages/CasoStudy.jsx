@@ -21,6 +21,11 @@ const ProjectDetails = () => {
     );
   }
 
+  // Clases reutilizables para mantener consistencia
+  const cardClass = "group bg-surface/45 backdrop-blur-md rounded-2xl p-6 border border-border-default transition-all duration-300 overflow-hidden shadow-lg shadow-accent/5 md:hover:border-accent/50 md:hover:shadow-2xl md:hover:shadow-accent/10 h-full";
+  
+  const buttonBaseClass = "flex-1 text-center px-4 py-2 text-sm rounded-lg transition-all duration-300 active:scale-95";
+
   return (
     <div className="bg-transparent min-h-screen p-10">
       <div className="max-w-7xl mx-auto ">
@@ -29,92 +34,105 @@ const ProjectDetails = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
           
           {/* Columna 1 (Principal - Span 2) */}
-          <div className="col-span-2 group bg-surface/45 backdrop-blur-md rounded-2xl p-6 border border-border-default hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 overflow-hidden">
-            
-            {/* Imagen Principal */}
-            <Reveal>
-                <img
-                src={project.processImages.hero}
-                alt={project.title}
-                className="w-full h-96 object-cover object-center mb-6 rounded-xl"
-                />
-            </Reveal>
+          <div className="col-span-2">
+            <div className={cardClass}>
+                {/* Imagen Principal */}
+                <Reveal>
+                    <img
+                    src={project.processImages.hero}
+                    alt={project.title}
+                    className="w-full h-96 object-cover object-center mb-6 rounded-xl shadow-inner"
+                    />
+                </Reveal>
 
-            {/* Título */}
-            <Reveal delay={0.2}>
-                <h2 className="text-3xl font-display font-bold text-text-primary mb-4">
-                {project.title}
-                </h2>
-            </Reveal>
+                {/* Título */}
+                <Reveal delay={0.2}>
+                    <h2 className="text-3xl font-display font-bold text-text-primary mb-4">
+                    {project.title}
+                    </h2>
+                </Reveal>
 
-            {/* Descripción */}
-            <Reveal delay={0.4}>
-                <p className="text-text-secondary font-body leading-relaxed mb-6">
-                {project.description}
-                </p>
-            </Reveal>
+                {/* Descripción */}
+                <Reveal delay={0.4}>
+                    <p className="text-text-secondary font-body leading-relaxed mb-6">
+                    {project.description}
+                    </p>
+                </Reveal>
 
-            {/* Metadatos (Año y Rol) */}
-            <Reveal delay={0.6}>
-                <div className="flex flex-wrap gap-8 border-t border-border-active pt-6">
-                    <div>
-                        <span className="block text-text-muted text-xs uppercase tracking-wider mb-1">Año</span>
-                        <p className="text-text-primary font-mono text-lg">{project.year}</p>
+                {/* Metadatos (Año y Rol) */}
+                <Reveal delay={0.6}>
+                    <div className="flex flex-wrap gap-8 border-t border-border-active pt-6">
+                        <div>
+                            <span className="block text-text-muted text-xs uppercase tracking-wider mb-1">Año</span>
+                            <p className="text-text-primary font-mono text-lg">{project.year}</p>
+                        </div>
+                        <div>
+                            <span className="block text-text-muted text-xs uppercase tracking-wider mb-1">Rol</span>
+                            <p className="text-text-primary font-mono text-lg">{project.rol}</p>
+                        </div>
                     </div>
-                    <div>
-                        <span className="block text-text-muted text-xs uppercase tracking-wider mb-1">Rol</span>
-                        <p className="text-text-primary font-mono text-lg">{project.rol}</p>
-                    </div>
-                </div>
-            </Reveal>
+                </Reveal>
+            </div>
           </div>
 
-          {/* Columna 2  */}
+          {/* Columna 2 (Sidebar) */}
           <div className="col-span-1">
             <Reveal delay={0.6}> 
-                <div className="group bg-surface/45 backdrop-blur-md rounded-2xl p-6 border border-border-default hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 overflow-hidden h-full">
-                <h3 className="text-lg font-semibold text-text-primary mb-6">Stack tecnológico</h3>
-                
-                {/* Mapeo de STACK */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                    {project.stack.map((tech, index) => (
-                    <span
-                        key={index}
-                        className="px-3 py-1 text-sm font-mono text-text-primary bg-surface border border-border-active rounded-lg"
-                    >
-                        {tech}
-                    </span>
-                    ))}
-                </div>
+                <div className={cardClass}>
+                    <h3 className="text-lg font-semibold text-text-primary mb-6">Stack tecnológico</h3>
+                    
+                    {/* Mapeo de STACK */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                        {project.stack.map((tech, index) => (
+                        <span
+                            key={index}
+                            className="px-3 py-1 text-sm font-mono text-text-primary bg-surface border border-border-active rounded-lg shadow-sm"
+                        >
+                            {tech}
+                        </span>
+                        ))}
+                    </div>
 
-                {/* Botones Secundarios */}
-                <div className="flex gap-3">
-                    <a
-                    href={project.links.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 text-center px-4 py-2 border border-border-active text-text-secondary text-sm rounded-lg hover:text-white hover:border-white/20 transition-colors"
-                    >
-                    Código
-                    </a>
+                    {/* Botones Secundarios (Optimizados para Touch) */}
+                    <div className="flex gap-3">
+                        {/* Botón Código */}
+                        <a
+                            href={project.links.code}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`
+                                ${buttonBaseClass}
+                                border border-border-active text-text-secondary
+                                active:bg-white/5 active:text-white
+                                md:hover:text-white md:hover:border-white/20
+                            `}
+                        >
+                            Código
+                        </a>
 
-                    {project.links.live && (
-                    <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 text-center px-4 py-2 border border-success text-success text-sm rounded-lg hover:bg-success/10 transition-colors"
-                    >
-                        Live
-                    </a>
-                    )}
-                </div>
+                        {/* Botón Live */}
+                        {project.links.live && (
+                        <a
+                            href={project.links.live}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`
+                                ${buttonBaseClass}
+                                border border-success text-success
+                                active:bg-success/10
+                                md:hover:bg-success/10
+                            `}
+                        >
+                            Live
+                        </a>
+                        )}
+                    </div>
                 </div>
             </Reveal>
           </div>
         </div>
 
-        {/*  SECCIÓN 2: DESAFÍO Y WIREFRAMES  */}
+        {/* SECCIÓN 2: DESAFÍO Y WIREFRAMES  */}
         <section>
           <div className="max-w-7xl mx-auto ">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
@@ -136,16 +154,25 @@ const ProjectDetails = () => {
                 {/* Stats (Grid de 3) */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   {project.stats.map((stat, index) => (
-                    <Reveal key={index} delay={index * 0.2}> {/* Efecto dominó en stats */}
+                    <Reveal key={index} delay={index * 0.2}>
                         <div
-                        className="flex flex-col items-center justify-center bg-surface/30 backdrop-blur-sm border border-white/5 p-4 rounded-xl hover:bg-surface/50 transition-colors"
+                        className="
+                            flex flex-col items-center justify-center 
+                            bg-surface/30 backdrop-blur-sm border border-white/5 p-4 rounded-xl 
+                            transition-all duration-300
+                            shadow-sm shadow-accent/5
+                            /* Táctil: se hunde un poco */
+                            active:scale-95
+                            /* Desktop: Hover suave */
+                            md:hover:bg-surface/50 md:hover:border-white/10
+                        "
                         >
-                        <span className="text-xl md:text-2xl font-display font-bold text-accent mb-1">
-                            {stat.value}
-                        </span>
-                        <span className="text-[10px] md:text-xs text-text-secondary text-center uppercase tracking-wide">
-                            {stat.label}
-                        </span>
+                            <span className="text-xl md:text-2xl font-display font-bold text-accent mb-1">
+                                {stat.value}
+                            </span>
+                            <span className="text-[10px] md:text-xs text-text-secondary text-center uppercase tracking-wide">
+                                {stat.label}
+                            </span>
                         </div>
                     </Reveal>
                   ))}
@@ -163,7 +190,7 @@ const ProjectDetails = () => {
                 <div className="flex flex-col gap-6">
                   {/* Imagen Wireframes */}
                   <Reveal delay={0.4}>
-                    <div className="bg-surface/20 p-2 rounded-xl border border-white/5">
+                    <div className="bg-surface/20 p-2 rounded-xl border border-white/5 shadow-lg shadow-black/20">
                         <img
                             src={project.processImages.wireframes}
                             alt="Wireframes"
@@ -174,7 +201,7 @@ const ProjectDetails = () => {
                   
                   {/* Imagen Mockups */}
                   <Reveal delay={0.6}>
-                    <div className="bg-surface/20 p-2 rounded-xl border border-white/5">
+                    <div className="bg-surface/20 p-2 rounded-xl border border-white/5 shadow-lg shadow-black/20">
                         <img
                             src={project.processImages.mockups}
                             alt="Mockups Finales"
@@ -189,7 +216,7 @@ const ProjectDetails = () => {
           </div>
         </section>
 
-        {/*SECCIÓN 3: DEMO EN VIVO  */}
+        {/* SECCIÓN 3: DEMO EN VIVO  */}
         <section className="mt-20">
           <div className="max-w-7xl mx-auto ">
             <div className="grid grid-cols-1 gap-4 ">

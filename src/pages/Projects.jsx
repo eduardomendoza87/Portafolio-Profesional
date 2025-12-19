@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { projects } from "../data/Projects";
-import { Reveal } from "../components/ui/Reveal"; 
+import { Reveal } from "../components/ui/Reveal";
 
 const Projects = () => {
     return (
@@ -18,22 +18,34 @@ const Projects = () => {
           {/* Contenedor GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* AGREGAMOS 'index' AQUÍ PARA EL CÁLCULO MATEMÁTICO */}
             {projects.map((project, index) => (
-              
-              /*  Multiplicamos el índice por 0.2s para el efecto dominó */
               <Reveal key={project.id} delay={index * 0.2}> 
                 
                 <div
-                  className="group bg-surface/45 backdrop-blur-md rounded-2xl p-6 border border-border-default hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 overflow-hidden h-full"
+                  className="
+                    group h-full
+                    bg-surface/45 backdrop-blur-md rounded-2xl p-6 
+                    border border-border-default 
+                    transition-all duration-300 
+                    overflow-hidden
+                    
+                    /*  MÓVIL */
+                    shadow-lg shadow-accent/5
+                    
+                    /*  ESCRITORIO */
+                    md:hover:border-accent/50 
+                    md:hover:shadow-2xl 
+                    md:hover:shadow-accent/10
+                    md:hover:-translate-y-1
+                  "
                 >
-                  {/* Contenedor FLEX para dividir: Izquierda (Texto) | Derecha (Imagen) */}
+                  {/* Contenedor FLEX */}
                   <div className="flex flex-col md:flex-row gap-6 h-full">
                     
                     {/* COLUMNA IZQUIERDA: Info */}
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
-                        <h2 className="text-2xl font-display font-bold text-text-primary mb-2">
+                        <h2 className="text-2xl font-display font-bold text-text-primary mb-2 group-hover:text-accent transition-colors duration-300">
                           {project.title}
                         </h2>
 
@@ -41,12 +53,10 @@ const Projects = () => {
                           {project.description}
                         </p>
 
-                        {/* Subtítulo Stack */}
                         <h3 className="text-sm font-mono text-text-muted mb-3 uppercase tracking-wider">
                           Stack Tecnológico
                         </h3>
 
-                        {/* Mapeo de STACK (Chips individuales) */}
                         <div className="flex flex-wrap gap-2 mb-8">
                           {project.stack.map((tech, indexStack) => (
                             <span
@@ -60,33 +70,62 @@ const Projects = () => {
                       </div>
 
                       {/* Botones de Acción */}
-                      <div className="flex items-center gap-4 mt-auto">
+                      <div className="flex flex-wrap items-center gap-4 mt-auto">
+                        
                         {/* Botón Principal: Ver Caso */}
                         <Link
                           to={project.links.caseStudy}
-                          className="px-4 py-2 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-accent/20"
+                          className="
+                            px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+                            bg-accent text-white
+                            shadow-lg shadow-accent/20
+                            
+                            /*  Móvil */
+                            active:scale-95 active:bg-accent-hover
+                            
+                            /*  Escritorio */
+                            md:hover:bg-accent-hover md:hover:scale-105
+                          "
                         >
                           Ver caso de estudio
                         </Link>
 
-                        {/* Botones Secundarios: Código y Live */}
                         <div className="flex gap-2">
+                          {/* Botón Código */}
                           <a
                             href={project.links.code}
                             target="_blank"
                             rel="noreferrer"
-                            className="px-4 py-2 border border-border-active text-text-secondary text-sm rounded-lg hover:text-white hover:border-white/20 transition-colors"
+                            className="
+                              px-4 py-2 rounded-lg text-sm transition-all duration-300
+                              border border-border-active text-text-secondary
+                              
+                              /*  Móvil */
+                              active:scale-95 active:bg-white/5 active:text-white
+                              
+                              /*  Escritorio */
+                              md:hover:text-white md:hover:border-white/20
+                            "
                           >
                             Código
                           </a>
 
-                          {/* Renderizado condicional: Solo si existe link 'live' */}
+                          {/* Botón Live */}
                           {project.links.live && (
                             <a
                               href={project.links.live}
                               target="_blank"
                               rel="noreferrer"
-                              className="px-4 py-2 border border-success text-success text-sm rounded-lg hover:bg-success/25  transition-colors"
+                              className="
+                                px-4 py-2 rounded-lg text-sm transition-all duration-300
+                                border border-success text-success
+                                
+                                /*  Móvil */
+                                active:scale-95 active:bg-success/10
+                                
+                                /* Escritorio */
+                                md:hover:bg-success/20
+                              "
                             >
                               Live
                             </a>
@@ -95,15 +134,15 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA Imagen  */}
-                    <div className="flex-1 relative h-64 md:h-auto rounded-xl overflow-hidden group-hover:ring-1 group-hover:ring-white/10 transition-all">
-                      {/* Overlay oscuro  */}
-                      <div className="absolute inset-0 bg-base/20 group-hover:bg-transparent transition-all duration-500 z-10" />
+                    {/* COLUMNA DERECHA Imagen */}
+                    <div className="flex-1 relative h-64 md:h-auto rounded-xl overflow-hidden transition-all md:group-hover:ring-1 md:group-hover:ring-white/10">
+                      {/* Overlay: Solo desaparece al hover en escritorio */}
+                      <div className="absolute inset-0 bg-base/20 transition-all duration-500 z-10 md:group-hover:bg-transparent" />
 
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top-left transform group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover object-top-left transform transition-transform duration-700 md:group-hover:scale-105"
                       />
                     </div>
                   </div>

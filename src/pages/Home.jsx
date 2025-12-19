@@ -11,7 +11,6 @@ const Home = () => {
     <div className="bg-transparent min-h-screen p-10">
       <div className="max-w-7xl mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
           {/*Column 1*/}
           <div>
             <Reveal>
@@ -54,12 +53,12 @@ const Home = () => {
             <div className="flex space-x-2 mb-6">
               <Reveal delay={0.8}>
                 <div className="flex gap-2">
-                    <span className="rounded-lg border border-success px-6 py-2 text-success hover:bg-success/20">
+                  <span className="rounded-lg border border-success px-6 py-2 text-success hover:bg-success/20">
                     🟢 Disponible
-                    </span>
-                    <span className="rounded-lg border border-accent-hover px-6 py-2 text-text-secondary hover:bg-accent/20">
+                  </span>
+                  <span className="rounded-lg border border-accent-hover px-6 py-2 text-text-secondary hover:bg-accent/20">
                     📍 Villahermosa,Tabasco, Mexico
-                    </span>
+                  </span>
                 </div>
               </Reveal>
             </div>
@@ -70,38 +69,58 @@ const Home = () => {
                 {/* Botón primario */}
                 <button
                   className="
-                    group
-                    bg-accent text-text-primary font-semibold
-                    px-8 py-3 rounded-2xl
-                    hover:bg-accent-hover hover:scale-105
-                    active:scale-95
-                    transition-all duration-300
-                    shadow-lg shadow-accent/50 hover:shadow-md hover:shadow-accent/60
-                    flex items-center gap-2
-                  "
+        group
+        w-full sm:w-auto  /* Ancho completo en cel, auto en PC */
+        bg-accent text-text-primary font-semibold
+        px-8 py-3 rounded-full
+        transition-all duration-300
+        
+        /* MÓVIL */
+        active:scale-95 
+        active:bg-accent-hover
+        
+        /* ESCRITORIO */
+        md:hover:bg-accent-hover 
+        md:hover:scale-105
+        
+        /* SOMBRAS */
+        shadow-lg shadow-accent/20
+        md:hover:shadow-accent/50
+        
+        flex items-center justify-center gap-2
+      "
                 >
                   Descargar CV
-                  <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                  <Download className="w-5 h-5 group-active:translate-y-1 md:group-hover:translate-y-0.5 transition-transform" />
                 </button>
 
                 {/* Botón secundario */}
                 <Link
                   to="/proyectos"
                   className="
-                    group
-                    inline-flex items-center justify-center gap-2
-                    rounded-2xl font-semibold
-                    border-2 border-accent-hover 
-                    px-8 py-3
-                    text-text-secondary 
-                    hover:bg-accent/20 hover:border-accent hover:text-accent
-                    hover:scale-105
-                    active:scale-95
-                    transition-all duration-300
-                  "
+        group
+        w-full sm:w-auto
+        inline-flex items-center justify-center gap-2
+        rounded-full font-semibold
+        border-2 border-accent-hover 
+        px-8 py-3
+        text-text-secondary 
+        transition-all duration-300
+
+        /* MÓVIL */
+        active:scale-95
+        active:bg-accent/10
+        active:text-white
+
+        /* ESCRITORIO */
+        md:hover:bg-accent/20 
+        md:hover:border-accent 
+        md:hover:text-accent
+        md:hover:scale-105
+      "
                 >
                   Ver proyectos
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-active:translate-x-1 md:group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </Reveal>
@@ -146,26 +165,26 @@ const Home = () => {
             </Reveal>
 
             {/* Badges de habilidades - (CORREGIDO: Delay 1.4 para secuencia final) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  Diseño UX/UI
-                </span>
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  React
-                </span>
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  Wireframing
-                </span>
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  Mockups
-                </span>
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  Prototipos
-                </span>
-                <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
-                  Figma
-                </span>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                Diseño UX/UI
+              </span>
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                React
+              </span>
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                Wireframing
+              </span>
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                Mockups
+              </span>
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                Prototipos
+              </span>
+              <span className="rounded-lg border border-border-active px-6 py-2 text-text-secondary hover:bg-accent/20 text-center">
+                Figma
+              </span>
+            </div>
           </div>
 
           {/* Column 2 - Imagen */}
@@ -192,7 +211,6 @@ const Home = () => {
               </div>
             </Reveal>
           </div>
-
         </div>
       </div>
     </div>
