@@ -134,7 +134,7 @@ const Home = () => {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/eduardo-mendoza-701450289/"
+                  href="www.linkedin.com/in/eduardo-mendoza-43aa1427a"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/50 transition-all duration-300 hover:scale-110"
@@ -144,7 +144,7 @@ const Home = () => {
 
                 {/* GitHub */}
                 <a
-                  href="https://github.com/EduardoMendoza289"
+                  href="https://github.com/eduardomendoza87"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/50 transition-all duration-300 hover:scale-110"
@@ -154,7 +154,7 @@ const Home = () => {
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/eduardo_mendoza289/"
+                  href="https://www.instagram.com/edumendoza.dev?igsh=MWlyMXppc3V1MjVtOA%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/50 transition-all duration-300 hover:scale-110"

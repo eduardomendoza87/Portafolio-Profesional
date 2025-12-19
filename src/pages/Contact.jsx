@@ -127,9 +127,9 @@ const Contact = () => {
               
               <div className="flex items-center gap-4 mb-6">
                 {[
-                  { icon: Linkedin, url: "https://www.linkedin.com/in/eduardo-mendoza-701450289/" },
-                  { icon: Github, url: "https://github.com/EduardoMendoza289" },
-                  { icon: Instagram, url: "https://www.instagram.com/eduardo_mendoza289/" }
+                  { icon: Linkedin, url: "www.linkedin.com/in/eduardo-mendoza-43aa1427a" },
+                  { icon: Github, url: "https://github.com/eduardomendoza87" },
+                  { icon: Instagram, url: "https://www.instagram.com/edumendoza.dev?igsh=MWlyMXppc3V1MjVtOA%3D%3D&utm_source=qr" }
                 ].map((social, idx) => (
                   <a 
                     key={idx}
