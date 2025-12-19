@@ -134,7 +134,7 @@ const Home = () => {
 
                 {/* LinkedIn */}
                 <a
-                  href="www.linkedin.com/in/eduardo-mendoza-43aa1427a"
+                  href="https://www.linkedin.com/in/eduardo-mendoza-43aa1427a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 rounded-xl text-text-secondary hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/50 transition-all duration-300 hover:scale-110"
